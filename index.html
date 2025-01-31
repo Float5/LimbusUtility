@@ -77,6 +77,7 @@
         }
 
 
+        console.log(getFinalPowers(friendlySkillInfo),getFinalPowers(enemySkillInfo))
 
         resultText.innerHTML = (getClashWinrate(friendlySkillInfo, enemySkillInfo) * 100).toFixed(13) + "%"
     })
@@ -93,7 +94,7 @@
 
         for(let i = 0; i <= CC; i++){
             var caseCount = (factorial(CC) / factorial(CC - i)) / factorial(i)
-            var power = skillInfo[_BP] + (skillInfo[_CP] * i)
+            var power = Number(skillInfo[_BP]) + Number((skillInfo[_CP] * i))
             var chance = (coinFrontChance ** i) * (coinBackChance ** (CC - i))
 
             if(power < 0){
